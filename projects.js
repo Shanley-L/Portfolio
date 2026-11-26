@@ -9,6 +9,9 @@
 // summary   : résumé en une ou deux phrases
 // features  : fonctionnalités clés (3 à 5 max)
 // stack     : technologies
+// image     : capture d'écran (optionnel), ex. "img/hypertube.png" — format 16:9 conseillé (1280×720)
+// imageLink : où mène un clic sur l'image (par défaut : la démo, sinon le code)
+// imagePosition : cadrage de l'image si elle est rognée, ex. "left top" (par défaut : centré en haut)
 //
 // Un dépôt absent de cette liste n'est pas affiché.
 
@@ -64,6 +67,9 @@ const PROJECTS = [
   },
   {
     repo: "mistralHackaton2026", title: "Monaco Cultural Agent", type: "hackathon", featured: true,
+    image: "img/monaco-cultural-agent.jpg",
+    imagePosition: "left top",
+    imageLink: "https://drive.google.com/file/d/19tuGZnlkjQOKZXzMPuKirml9GdGAbmlD/view",
     status: "Prototype",
     summary: "Agent conversationnel IA créé pour le hackathon Mistral AI 2026 : il répond aux questions sur les événements culturels de Monaco à partir de données réelles.",
     features: [
