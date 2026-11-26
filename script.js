@@ -25,6 +25,7 @@ function header(user) {
   av.alt = name; av.hidden = false;
   if (CONFIG.email) { $("mail").href = "mailto:" + CONFIG.email; $("mail").hidden = false; }
   if (CONFIG.linkedin) { $("linkedin").href = CONFIG.linkedin; $("linkedin").hidden = false; }
+  if (CONFIG.cv) { $("cv").href = CONFIG.cv; $("cv").hidden = false; }
 
   const n = (t) => PROJECTS.filter((p) => p.type === t).length;
   $("stats").innerHTML = [
@@ -57,8 +58,13 @@ function card(p) {
     ? `<ul class="feats">${p.features.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>` : "";
   const stack = (p.stack || []).map((s) => `<span class="tag">${esc(s)}</span>`).join("");
   const stars = gh?.stargazers_count ? `<span>★ ${gh.stargazers_count}</span>` : "";
+  const shot = p.image
+    ? `<a class="shot" href="${esc(p.imageLink || demo || url)}" target="_blank" rel="noopener" tabindex="-1">
+         <img src="${esc(p.image)}"${p.imagePosition ? ` style="object-position:${esc(p.imagePosition)}"` : ""} alt="Aperçu de ${esc(p.title)}" loading="lazy" onerror="this.parentElement.remove()">
+       </a>` : "";
   return `
     <article class="card${p.featured ? " big" : ""}">
+      ${shot}
       <div class="badges">${badges}</div>
       <h3><a href="${esc(url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
       <p class="desc">${esc(p.summary)}</p>
@@ -84,6 +90,17 @@ function render() {
   $("featured-wrap").hidden = !feat.length;
   $("others-wrap").hidden = !rest.length;
   $("empty").hidden = list.length > 0;
+}
+
+// ── Compétences ──
+function skills() {
+  const list = typeof SKILLS !== "undefined" ? SKILLS : [];
+  $("skills-wrap").hidden = !list.length;
+  $("skills").innerHTML = list.map((g) => `
+    <div class="skill-group">
+      <h3>${esc(g.group)}</h3>
+      <div class="tags">${g.items.map((s) => `<span class="tag">${esc(s)}</span>`).join("")}</div>
+    </div>`).join("");
 }
 
 // ── Expériences ──
@@ -130,7 +147,7 @@ $("filters").addEventListener("click", (e) => {
 
 // ── Démarrage : le contenu s'affiche tout de suite, l'API GitHub ajoute avatar, étoiles et liens de démo ──
 $("year").textContent = new Date().getFullYear();
-header(null); experiences(); filters(); render();
+header(null); skills(); experiences(); filters(); render();
 
 (async () => {
   try {
