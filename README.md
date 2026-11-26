@@ -18,9 +18,11 @@ Le contenu est écrit à la main dans des fichiers de données ; l'API publique 
 
 | Fichier | Rôle |
 |---|---|
-| `config.js` | Nom, titre, bio, liens de contact |
+| `config.js` | Nom, titre, bio, liens, compétences |
 | `experiences.js` | Expériences professionnelles et formation |
-| `projects.js` | Fiches des projets (résumé, fonctionnalités, stack, type) |
+| `projects.js` | Fiches des projets (résumé, fonctionnalités, stack, type, capture) |
+| `img/` | Captures d'écran des projets |
+| `cv/` | CV public en PDF (sans coordonnées personnelles) |
 | `index.html`, `style.css`, `script.js` | Structure, style (thème clair / sombre automatique) et affichage |
 
 ## Lancer en local
