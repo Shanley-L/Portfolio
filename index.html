@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio de mes projets : école 42, hackathons et projets personnels">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img id="avatar" class="avatar" alt="" hidden>
+    <h1 id="name"></h1>
+    <p id="tagline" class="tagline"></p>
+    <p id="bio" class="bio"></p>
+    <nav class="links">
+      <a id="ghlink" class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a id="linkedin" class="btn ghost" href="#" target="_blank" rel="noopener" hidden>LinkedIn</a>
+      <a id="mail" class="btn ghost" href="#" hidden>Me contacter</a>
+    </nav>
+    <ul id="stats" class="stats"></ul>
+  </header>
+
+  <main>
+    <section id="experience-wrap">
+      <h2 class="section-title">Expériences professionnelles</h2>
+      <ol id="experience" class="timeline"></ol>
+    </section>
+
+    <section id="education-wrap">
+      <h2 class="section-title">Formation</h2>
+      <ol id="education" class="timeline"></ol>
+    </section>
+
+    <h2 class="section-title projects-title">Projets</h2>
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Rechercher un projet ou une techno (React, Docker, C…)" aria-label="Rechercher">
+      <div id="filters" class="filters" role="group" aria-label="Filtrer par type"></div>
+    </section>
+
+    <section id="featured-wrap">
+      <h2 class="section-title">Projets phares</h2>
+      <div id="featured" class="grid featured"></div>
+    </section>
+
+    <section id="others-wrap">
+      <h2 class="section-title">Autres projets</h2>
+      <div id="others" class="grid"></div>
+    </section>
+
+    <p id="empty" class="msg" hidden>Aucun projet ne correspond.</p>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <span id="footname"></span> · Hébergé sur GitHub Pages</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="projects.js"></script>
+  <script src="experiences.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
