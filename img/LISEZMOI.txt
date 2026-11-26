@@ -1,0 +1,3 @@
+Déposez ici les captures d'écran des projets (ex. hypertube.png),
+puis ajoutez image: "img/hypertube.png" à la fiche du projet dans projects.js.
+Format conseillé : 16:9, 1280×720, PNG ou JPG.
